@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    margin: 20px 0;
+}
+h3 {
+    font-weight: 400;
+}
+h4 {
+    font-weight: 700;
+}
+h5 {
+    font-size: 14px;
+}
+p {
+    margin: 5px;
+    padding: 5px;
+}
+span {
+    margin: 5px 0px;
+    color: brown;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    margin: 10px;
+    padding: 5px;
+    border:0 0 0.1em solid gray;
+    box-shadow:inset -0.5em -0.5em 0 -0.35em rgba(0,0,0,0.17);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modall {
+    text-align: center;
+    margin: auto;
+    padding: 25px;
+    background: orange;
+    width: 45%;
+    height: auto;
+        
+    h1 {
+        margin: 15px;
+    }
+    button {
+        padding: 10px;
+    }
+    .Binput {
+        margin: 15px;
+        label {
+            margin-right: 10px;
+        }
+        input {
+            margin-right: 0px;
+        }
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list {
+    margin: 10px;
+    .lists {
+        margin: 5px;
+    }
+}
+.add-btn {
+    padding: 2px;
+    margin: 5px; 
+}
+.mini-btn {
+    margin: 5px;
+    color: black;
+}
+.mini-btn:hover {
+    color: orange;
+    background-color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cv-preview {
+    background: orange;
+    margin: 10px;
+    padding: 35px;
+    border:0 0 0.1em solid gray;
+    box-shadow:inset -0.5em -0.5em 0 -0.35em rgba(0,0,0,0.17);
 }
-
-.App-link {
-  color: #61dafb;
+.container {
+    /* background: white; */
+    padding: 10px 10px 10px;
+    box-shadow:inset 0em -0.5em 0 -0.35em white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pic {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 20%;
+}
+.img-part{
+    margin: 20px;
 }
