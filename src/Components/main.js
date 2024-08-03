@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 // import { PDFDownloadLink } from "react-pdf/renderer";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 import Forms from './Forms'
 import CVpreview from './CVpreview'
@@ -68,6 +70,18 @@ export default function Main() {
   const [hobbyInfo, setHobbyInfo] = useState(defaultHobbyInfo);
   const [langInfo, setLangInfo] = useState(defaultLangInfo);
   
+  const handleDownloadPDF = () => {
+    const input = document.getElementById('pdf-content'); 
+    // Specify the id of the element you want to convert to PDF
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, 'PNG', 'auto', 'auto');
+      pdf.save('downloaded-file.pdf'); 
+      // Specify the name of the downloaded PDF file
+    });
+  };
+
     return(
         <>
       <Container className='main'>
@@ -87,6 +101,8 @@ export default function Main() {
               hobbyInfo={hobbyInfo}
               setHobbyInfo={setHobbyInfo}
             />
+            <button onClick={handleDownloadPDF}>Download PDF</button>
+
             <div className="preview_download">
             {/* <PDFDownloadLink
               document={
@@ -116,9 +132,9 @@ export default function Main() {
                 )
               }
             </PDFDownloadLink> */}
-          </div>
+            </div>
           </Col>
-          <Col sm={12} md={8} lg={9} className='frame-sec'>
+          <Col sm={12} md={8} lg={9} className='frame-sec' id="pdf-content">
             <CVpreview 
               information={information}
               experienceInfo={experienceInfo}
